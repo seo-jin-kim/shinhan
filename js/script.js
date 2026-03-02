@@ -10,47 +10,43 @@ $(function () {
     once: false //스크롤시 딱 한번만 하고싶을땐 true
   });    
 
-  // Slick 슬라이더 초기화
- // Slick 슬라이더 초기화
-var $slider = $('.visual .slide').slick({
-  arrows: true,
-  dots: true,
-  fade: true,
-  autoplay: true,
-  autoplaySpeed: 5700,
-  pauseOnHover: false,
-  pauseOnFocus: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
+
+  // swiper
+const swiper = new Swiper(".swiper-mySwiper", {
+  loop: true,
+  speed: 1200,
+  effect:"fade",
+   fadeEffect: {
+    crossFade: true,
+  },
+  autoplay: {
+    delay: 3200,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    prevEl: ".swiper-arrow-wrap .swiper-button-prev",
+    nextEl: ".swiper-arrow-wrap .swiper-button-next",
+  },
+  pagination: {
+    el: ".swiper-progress-wrap",
+    type: "bullets", 
+    clickable: true,
+  },
 });
 
-// 접근성 보호: 숨겨진 슬라이드에 포커스 금지
-function fixSlickAriaFocus() {
-  $slider.find('.slick-slide').each(function() {
-    var $slide = $(this);
-    if ($slide.attr('aria-hidden') === 'true') {
-      $slide.attr('tabindex', '-1'); // 포커스 금지
-      if ($slide.is(':focus') || $slide.find(':focus').length) {
-        $slide.blur();
-        $slide.find(':focus').blur();
-      }
-    } else {
-      $slide.attr('tabindex', '0'); // 활성 슬라이드만 포커스 가능
+  // Play/Pause 버튼 토글
+  const swiperEl = document.querySelector('.swiper-mySwiper');
+  const playBtn = document.querySelector('.play-pause-btn');
+
+  playBtn.addEventListener('click', () => {
+    if(swiper.autoplay.running){
+      swiper.autoplay.stop();
+      swiperEl.classList.add("is-paused");
+    }else{
+      swiper.autoplay.start();
+      swiperEl.classList.remove("is-paused");
     }
   });
-}
-
-// 초기 실행
-fixSlickAriaFocus();
-
-// 슬라이드 변경 시 실행
-$slider.on('beforeChange afterChange', fixSlickAriaFocus);
-
-// DOM 변경 감시 (Slick이 aria-hidden 바꿀 때마다 실행)
-const observer = new MutationObserver(fixSlickAriaFocus);
-observer.observe($slider[0], { attributes: true, subtree: true, attributeFilter: ['aria-hidden'] });
 
 
       
@@ -103,22 +99,7 @@ observer.observe($slider[0], { attributes: true, subtree: true, attributeFilter:
     }
   });
 
-  // Play/Pause 버튼 토글
-  var $playPauseBtn = $(".play-pause-btn");
-  var isPlaying = true;
 
-  $playPauseBtn.off('click.playPause').on('click.playPause', function () {
-    if (isPlaying) {
-      $slider.slick("slickPause");
-      $playPauseBtn.addClass("paused");
-      $(".visual .slide").addClass("paused");
-    } else {
-      $slider.slick("slickPlay");
-      $playPauseBtn.removeClass("paused");
-      $(".visual .slide").removeClass("paused");
-    }
-    isPlaying = !isPlaying;
-  });
 
   // 스크롤 이벤트 핸들러 최적화
   let scrollTimeout;
@@ -236,51 +217,77 @@ observer.observe($slider[0], { attributes: true, subtree: true, attributeFilter:
       }
   });
 
-  // GSAP과 ScrollTrigger 플러그인 등록
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '.services',
-      start: 'top top',
-      end: '+=2700',
-      endTrigger: ".list",
-      pin: true,
-      pinSpacing: true,
-      scrub: 4,
-      // markers: true,
-      onUpdate: self => {
-        gsap.to('.services .inner .list', {
-          y: -1800 * self.progress,
-          duration: 0.8,
-          ease: 'power2.out',
-        });
+// GSAP과 ScrollTrigger 플러그인 등록
+gsap.registerPlugin(ScrollTrigger);
 
-      let main_service = $('.services');
-      main_service.removeClass('active01 active02 active03 active04 active05 active06 active07');
+ScrollTrigger.matchMedia({
 
-        if (self.progress >= 0.005 && self.progress < 0.091) {
-          main_service.addClass('active01');
-        } else if (self.progress >= 0.091 && self.progress < 0.276) {
-          main_service.addClass('active02');
-        } else if (self.progress >= 0.276 && self.progress < 0.387) {
-          main_service.addClass('active03');
-        } else if (self.progress >= 0.387 && self.progress < 0.602) {
-          main_service.addClass('active04');
-        } else if (self.progress >= 0.602 && self.progress < 0.758) {
-          main_service.addClass('active05');
-        } else if (self.progress >= 0.758 && self.progress < 0.9) {
-          main_service.addClass('active06');
-        } else if (self.progress >= 0.9) {
-          main_service.addClass('active07');
-        }
+  // PC (1025px 이상에서만 ScrollTrigger 생성)
+  "(min-width: 1025px)": function () {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".services",
+        start: "top top",
+        end: "+=2700",
+        endTrigger: ".list",
+        pin: true,
+        pinSpacing: true,
+        scrub: 4,
+        // markers: true,
+
+        onUpdate: (self) => {
+          gsap.to(".services .inner .list", {
+            y: -1800 * self.progress,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+
+          let main_service = $(".services");
+          main_service.removeClass(
+            "active01 active02 active03 active04 active05 active06 active07"
+          );
+
+          if (self.progress >= 0.005 && self.progress < 0.091) {
+            main_service.addClass("active01");
+          } else if (self.progress >= 0.091 && self.progress < 0.276) {
+            main_service.addClass("active02");
+          } else if (self.progress >= 0.276 && self.progress < 0.387) {
+            main_service.addClass("active03");
+          } else if (self.progress >= 0.387 && self.progress < 0.602) {
+            main_service.addClass("active04");
+          } else if (self.progress >= 0.602 && self.progress < 0.758) {
+            main_service.addClass("active05");
+          } else if (self.progress >= 0.758 && self.progress < 0.9) {
+            main_service.addClass("active06");
+          } else if (self.progress >= 0.9) {
+            main_service.addClass("active07");
+          }
+        },
+
+        onLeave: () => {
+          $(".services").removeClass(
+            "active01 active02 active03 active04 active05 active06"
+          );
+        },
       },
-      onLeave: () => {
-        let main_service = $('.services');
-        main_service.removeClass('active01 active02 active03 active04 active05 active06');
-        // active07은 제거하지 않음 - 다른 섹션으로 이동해도 유지
-      }
-    }
-  });
+    });
+
+    // matchMedia가 해제될 때 자동 cleanup 되도록 반환
+    return () => {
+      tl.scrollTrigger && tl.scrollTrigger.kill();
+      tl.kill();
+      $(".services").removeClass(
+        "active01 active02 active03 active04 active05 active06 active07"
+      );
+      gsap.set(".services .inner .list", { clearProps: "transform" });
+    };
+  },
+
+  "(max-width: 1024px)": function () {
+},
+
+});
 });
 
 
