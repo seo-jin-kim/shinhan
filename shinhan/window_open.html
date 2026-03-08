@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습용 신한은행</title>
+    <script src="https://kit.fontawesome.com/155a43b072.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/splitting.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="innerHeader">
+                <h1>
+                    <a href="index.html"><img src="img/gnb_logo_w.svg" alt="신한은행 로고"></a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="#" title="서비스 소개">서비스 소개</a>
+                            <div class="plus-minus-toggle"><img src="img/chevron-down-solid (2).svg" alt=""></div>
+                            <ul class="innerBox">
+                                <li><a href="#">신용카드</a></li>
+                                <li><a href="#">가상계좌</a></li>
+                                <li><a href="#">계좌이체</a></li>
+                                <li><a href="#">정기결제</a></li>
+                                <li><a href="#">브랜드페이</a></li>
+                                <li><a href="#">에스크로</a></li>
+                                <li><a href="#">지급대행</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">서비스 신청</a></li>
+                        <li>
+                            <a href="#">고객센터</a>
+                            <div class="plus-minus-toggle"><img src="img/chevron-down-solid (2).svg" alt=""></div>
+                            <ul class="innerBox">
+                                <li><a href="#">결제내역조회</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">개발자센터</a></li>
+                    </ul>
+                    
+                </nav>
+                <button class="more-btn">
+                    <i class="icon"></i>
+                </button>
+            </div>
+        </header>
+        <section class="swiper-mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img-container">
+                        <img src="img/main_visual1.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2 class="en">결제에 <span>믿음</span>과<br> <span>편리함</span>을 더하다</h2>
+                        <p>신한은행의 이름이 고객의 믿음으로 이어집니다<br>
+                        안정적이고 편리한 비대면 결제 시스템, 신한은행 PG로 만나보세요</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-container">
+                        <img src="img/main_visual2.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2 class="en">전자결제에 <br><span>금융 노하우</span>를 더하다</h2>
+                        <p>직관적인 관리자 사이트를 통해 가맹점에서 쉽고 편리하게 이용할 수 있습니다.<br>
+                        신한은행만의 안정적인 시스템을 기반으로 결제 및 통합정산 서비스를 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-container">
+                        <img src="img/main_visual3.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2 class="en">신한은행이 제공하는<br><span>특별한 결제 경험</span></h2>
+                        <p>결제 중 고객 이탈 없는 빠르고 편리한 간편결제!<br>
+                        보안의 차원이 다릅니다.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="arrow-btn">
+                    <div class="swiper-arrow-wrap">
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="swiper-progress-wrap"></div>
+                    <div class="play-pause-btn">
+                        <img class="play" src="img/btn_swiper_play.svg" alt="">
+                        <img class="stop" src="img/btn_swiper_pause.svg" alt="">
+                    </div>
+                    <div class="swiper-arrow-wrap">
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            <div class="scroll_btn">
+                <p class="scroll">SCROLL DOWN</p>
+                <span class="bar"></span>
+            </div>
+        </section>
+        <section class="services">
+            <div class="background">
+                <div class="bg1"></div>
+                <div class="bg2"></div>
+                <div class="bg3"></div>
+                <div class="bg4"></div>
+                <div class="bg5"></div>
+                <div class="bg6"></div>
+                <div class="bg7"></div>
+            </div>
+            <div class="inner">
+                <div class="sticky-wrap">
+                    <div class="txt" id="servicesTxt">
+                        <p class="en">Our Services</p>
+                        <h2 class="en">신한은행 PG란?</h2>
+                        <p class="subText">신한은행만의 높은 안정성과 보안성을 기반으로
+                        신용카드나 간편결제등 통합정산 서비스를 제공하는
+                        B2B,B2C 전자지급결제대행 서비스입니다</p>
+                    </div>
+                </div>
+                <ul class="list">
+                    <li>
+                        <a href="#">
+                            <div class="imgBox">
+                                <img src="img/bg_box_card.jpg" alt="">
+                            </div>
+                            <div class="innerBox">
+                                <div class="textBox">
+                                    <h3>신용카드</h3>
+                                    <p>신용카드 결제 프로세스의 효율성을 극대화하고 보안을 강화하여 편리하고 안전한 결제가 가능하게 하며, 고객에게 편리하고 안전한 결제 옵션을 제공하여 매출 증가와 고객 만족도 향상에 기여합니다.</p>
+                                </div>
+                                <div class="btn">
+                                    <span> 자세히 보기</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_virtual.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                    <h3>가상계좌</h3>
+                                        <p>가상계좌는 특정 거래나 고객에게 할당된 일회성 또는 반복 사용 계좌로, 고객에게 고유한 가상계좌를 발급하고 결제 과정을 자동화하여 입금 확인 절차 간소화 및 결제 효율성을 높일 수 있습니다.</p>
+                                    </div>
+                                    <div class="btn">
+                                        <span> 자세히 보기</span>
+                                    </div>
+                                </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_transfer.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                        <h3>계좌이체</h3>
+                                        <p>번거로운 은행방문이나 인터넷 뱅킹 접속 없이 플랫폼 내에서 은행계좌 간 자동화된 자금 이동 서비스를 제공하여 신속하고 안전한 금융거래 및 자금 관리를 용이하게 합니다.</p>
+                                    </div>
+                                    <div class="btn">
+                                        <span> 자세히 보기</span>
+                                    </div>
+                                </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_payment.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                        <h3>정기결제</h3>
+                                        <p>정기적으로 구독료나 서비스 요금을 청구할 수 있으며, 결제 과정을 간소화하고 자동화하여 고객에게 편리한 결제 서비스를 제공함으로써 안정적 수익 확보 및 고객 만족도를 높일 수 있습니다.</p>
+                                    </div>
+                                    <div class="btn">
+                                        <span> 자세히 보기</span>
+                                    </div>
+                                </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_brand.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                        <h3>브랜드페이</h3>
+                                        <p>자사 브랜드의 개성을 강조한 자체 결제 시스템을 구축하여 고객에게 안전하고 편리한 결제 시스템을 지원하는 서비스 입니다. 일관된 브랜드 경험을 제공하여 락인 효과를 극대화할 수 있습니다.</p>
+                                    </div>
+                                    <div class="btn">
+                                        <span> 자세히 보기</span>
+                                    </div>
+                                </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_escrow.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                        <h3>에스크로</h3>
+                                        <p>고객이 결제한 금액을 신한은행 PG가 보관하고, 거래 조건이 충족되면 해당 금액을 가맹점에게 지급하는 시스템으로 고객에게 안전하고 신뢰할 수 있는 거래 환경을 제공하여 분쟁을 최소할 수 있는 서비스입니다.</p>
+                                    </div>
+                                <div class="btn">
+                                    <span> 자세히 보기</span>
+                                </div>    
+                            </div> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <div class="imgBox">
+                                    <img src="img/bg_box_agency.jpg" alt="">
+                                </div>
+                                <div class="innerBox">
+                                    <div class="textBox">
+                                    <h3>지급대행</h3>
+                                        <p>오픈마켓 사업자를 대신해 신한은행이 판매자에게 정산금을 지급대행하는 서비스 입니다. 거래와 정산 과정을 효율적으로 처리하고, 정확한 지급을 보장하여 신뢰를 구축하는 데 중요한 역할을 합니다.</p>
+                                    </div>
+                                    <div class="btn">
+                                        <span> 자세히 보기</span>
+                                    </div>                                
+                                </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="why">
+            <div class="inner animate" data-animate="motion">
+            
+                <div class="top" data-splitting>
+                    <span>차별화된 서비스</span>
+                    <h2 class="en">왜 <span>신한은행 PG</span>여야 할까요?</h2>
+                    <p>오랜 시간 축적된 금융 노하우와 경험을 믿으세요<br>
+                    높은 안정성과 보안성을 기반으로 사업 모델에 최적화된 결제 서비스를 제공합니다</p>
+                    
+                </div>
+                <div class="bottom" data-splitting>
+                    <ul>
+                        <li>
+                            <img src="img/img_service1.png" alt="">
+                            <p>경쟁력 있는 결제 수수료와 맞춤형 요금제, 투명한 수수료 
+                                구조를 제공하여<em> 거래 비용을 절감</em>하고 <em>고객의 비용 부담을 최소화</em>합니다.</p>
+                                <div class="hide"><span>01</span><p>결제수수료 절감</p></div>
+                        </li>
+                        <li>
+                            <img src="img/img_service2.png" alt="">
+                            <p>강력한 보안 시스템과 실시간 모니터링을 통해 <em>자금 관리의 안정성을 보장</em>하며, 체계적인 리스크 관리와 데이터 보호로 <em>고객의
+                            자산을 안전하게 관리</em>합니다.</p>
+                            <div class="hide"><span>02</span><p>자금관리 안정성</p></div>
+                        </li>
+                        <li>
+                            <img src="img/img_service3.png" alt="">
+                            <p>검증된 시스템과 오랜 경험을 바탕으로<em> 높은 
+                                서비스 신뢰도를 제공</em>하며, 안정적인 기술 지원과 체계적인 
+                                고객 관리로 <em>신뢰할 수 있는 결제 환경</em>을 보장합니다.</p>
+                                <div class="hide"><span>03</span><p>서비스 신뢰도</p></div>
+                        </li>
+
+                        <li>
+                            <img src="img/img_service4.png" alt="">
+                            <p>정산 주기를 단축하여 <em>빠른 자금 입금을 지원</em>하며,
+                            이를 통해 기업의 자금 흐름을 원할하게 하고 <em>운영 자금을 효율적으로 관리</em>할 수 있습니다.</p>
+                            <div class="hide"><span>04</span><p>정산주기 단축</p></div>
+                        </li>
+                        <li>
+                            <img src="img/img_service5.png" alt="">
+                            <p>고객의 비즈니스 요구에 맞춘 <em>맞춤형 통합결제
+                            솔루션을 제공</em>하며, 다양한 결제 옵션과 유연한 
+                            통합 기능으로 <em>최적의 결제 환경을 구축</em>합니다.</p>
+                            <div class="hide"><span>05</span><p>맞춤형 통합결제</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="partner">
+            <div class="inner animate" data-animate="motion">
+                <div class="topbox" data-splitting>
+                    <span>Our Partner</span>
+                    <h2 class="en">배달앱 <span><img src="img/logo_ddangyo.svg" alt="땡겨요 로고"></span>도 이용하는 신한은행 PG</h2>
+                </div>
+                <div class="bottombox" data-splitting>
+                    <div class="innerbox">
+                    <p  class="content" data-splitting><span>소상공인의 부담을 덜어드리는 </span>  공공배달 앱 땡겨요도 신한은행 PG와 함께합니다.</p>
+                    <ul>
+                        <li data-splitting>
+                            <img src="img/ico_parther1.png" alt="">
+                            <p class="tit">낮은 주문 중개수수료</p>
+                            <p class="txt">신한은행 PG의 낮은 수수료로 땡겨요는 광고비 없이 2% 수수료가 가능합니다.</p>
+                        </li>
+                        <li data-splitting>
+                            <img src="img/ico_parther2.png" alt="">
+                            <p class="tit">빠른 정산주기</p>
+                            <p class="txt">신한은행 PG의 빠른 정산으로 계좌이체는 당일 입금, 카드결제도 다음날에 정산됩니다.</p>
+                        </li>
+                        <li data-splitting>
+                            <img src="img/ico_parther3.png" alt="">
+                            <p class="tit">카드/계좌 복합결제</p>
+                            <p class="txt">다양한 결제 수단 사용과 복합결제가 가능하여 원하는 방식으로 결제할 수 있습니다.</p>
+                        </li>
+                    </ul>
+                    </div>
+                    <span class="img_01" data-splitting><img src="img/img_delivery.png" alt=""></span>
+                </div>
+                
+            </div>
+            
+            <p class="besides">그 외 다양한 이용사례로 안정성을 검증받았습니다.</p>
+            <div class="slider">
+                <div class="slide-track">
+                    <ul class="slide">
+                        <li><img src="img/logo_parther1.png" alt=""></li>
+                        <li><img src="img/logo_parther2.png" alt=""></li>
+                        <li><img src="img/logo_parther3.png" alt=""></li>
+                        <li><img src="img/logo_parther4.png" alt=""></li>
+                        <li><img src="img/logo_parther5.png" alt=""></li>
+                        <li><img src="img/logo_parther6.png" alt=""></li>
+                        <!-- 복제용 콘텐츠 반복 -->
+                        <li><img src="img/logo_parther1.png" alt=""></li>
+                        <li><img src="img/logo_parther2.png" alt=""></li>
+                        <li><img src="img/logo_parther3.png" alt=""></li>
+                        <li><img src="img/logo_parther4.png" alt=""></li>
+                        <li><img src="img/logo_parther5.png" alt=""></li>
+                        <li><img src="img/logo_parther6.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Application">
+                <div class="inner">
+                    <h2><a href="">신한은행 PG의 안정적인 결제 서비스 신청안내</a></h2>
+                    <span><a href="#">신청 방법 알아보기</a></span>
+                </div>
+                </div>
+            <div class="FAQ">
+                <div class="inner">
+                    <div class="top">
+                        <div class="left">
+                            <span>자주 묻는 질문</span>
+                            <h2 class="en">궁금한 점이 더 있으신가요?</h2>
+                        </div>
+                        <div class="right">
+                            <a href="#">더보기</a>
+                        </div>
+                    </div>
+                    
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="conbox">
+                                    <p class="txt">결제내역문의</p>
+                                    <span><img src="img/ico_q.svg" alt=""></span>
+                                    <p class="content">신한은행에서 물건을 구매한 적이 없어요. 결제된 내역이 무엇인지 알고 싶습니다.</p>
+                                </div>
+                            <div class="plus-minus-toggle"></div>
+                            </a>
+                            <div class="answer">
+                                <span><img src="img/letter-a.png" alt=""></span>
+                                    <div class="txt">
+                                    <p>신한은행은 전자결제 서비스 제공 업체로서 당행의 결제 시스템을 사용하는 상점에서 결제를 하셨을 경우 결제 내역에 '신한은행' or '신한은행PG' 라고 표기가 됩니다. <br>
+                                        신한은행PG홈페이지 혹은 E-Mail로 아래 정보를 확인하여 요청 주시면 사용처를 확인하여 회신드리겠습니다.</p>
+                                    <p>E-Mail : task_pg@shinhan.com</p>
+                                    <p>[신용카드] 카드번호와 승인번호(8자리/ 승인 번호는 카드사 홈페이지 및 카드사 고객센터를 통해 확인 가능), 결제일자, 결제금액<br>
+                                        [계좌이체] 예금주의 생년월일(사업자 통장으로 계좌이체 시 사업자 번호), 이용된 통장의 계좌번호 뒤 5자리, 결제일자, 결제금액<br>
+                                        [무통장입금(가상계좌)] 입금하신 가상계좌번호, 결제일자, 결제금액</p>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="conbox">
+                                <p class="txt">결제내역문의</p>
+                                <span><img src="img/ico_q.svg" alt=""></span>
+                                <p class="content">구매하지 않았는데 매달 자동으로 결제가 되고 있습니다.</p>
+                            </div>
+                            <div class="plus-minus-toggle"></div>
+                            </a>
+                            <div class="answer">
+                                <span><img src="img/letter-a.png" alt=""></span>
+                                        <div class="txt">
+                                        <p>상점에 자동결제를 신청해 놓으신 경우 정기결제에 대한 승인 내역일 수 있습니다. <br>
+                                            신용카드 결제정보를 확인하시어 아래 메일로 문의주시면 결제내역 확인하여 회신드리겠습니다.</p>
+                                        <p>E-Mail : task_pg@shinhan.com <br>
+                                            [신용카드] 카드번호와 승인번호(8자리/ 승인 번호는 카드사 홈페이지 및 카드사 고객센터를 통해 확인 가능), 결제일자, 결제금액</p>
+                                        </div>
+                            </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="conbox">
+                                    <p class="txt">결제내역문의</p>
+                                    <span><img src="img/ico_q.svg" alt=""></span>
+                                    <p class="content">결제된 건을 취소하고 싶습니다.</p>
+                                </div>
+                                <div class="plus-minus-toggle"></div>
+                            </a>
+                            
+                            <div class="answer">
+                                <span><img src="img/letter-a.png" alt=""></span>
+                                <div class="txt">
+                                <p>신한은행 PG는 온라인 상점에 결제시스템을 제공하는 결제대행사로, 고객님께서 사용하신 사이트의 결제서비스만을 제공합니다. <br>
+                                    결제 취소는 결제하신 상점에서만 진행 가능하므로, 결제하신 사이트 측으로 취소 관련 문의 부탁드립니다.</p>
+                                    </div>
+                            </div>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="inner">
+                <div class="left">
+                <div class="logo">
+                    <img src="img/f_logo.svg" alt="">
+                    <p class="mail"><a href="#"><span><i class="fa-regular fa-envelope"></i></span> task_pg@shinhan.com</a></p>
+                    <p class="reserved"><img src="img/letter-c.png" alt=""> SHINHAN BANK.All reserved.</p>
+                </div>
+                <ul>
+                    <li><a href="#">전자금융거래 이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                    <li><a href="#">에스크로 서비스 이용약관</a></li>
+                </ul>
+                </div>
+                <button>
+                    <a href="#">Family Site</a>
+                        <ul class="innerBox">
+                            <li><a href="#">PG 개발자센터</a></li>
+                            <li><a href="#">신한은행 BasS</a></li>
+                        </ul>
+                    
+                </button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

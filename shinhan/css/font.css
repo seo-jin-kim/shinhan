@@ -1,0 +1,26 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/pretendard/Pretendard-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/pretendard/Pretendard-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/pretendard/Pretendard-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OneShinhan';
+    src: url('../fonts/OneShinhan/OneShinhanBold.otf');
+}
+
