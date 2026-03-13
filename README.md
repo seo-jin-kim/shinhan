@@ -62,3 +62,47 @@ shinhan-main/
     ├── splitting.min.js
     └── ScrollTrigger.min.js
 ```
+
+<br>
+
+### 🔑 주요 기능
+
+
+**1. 메인 비주얼 슬라이더**
+
+    Swiper.js Fade 효과 슬라이드
+    이전/다음 화살표 버튼 및 Bullet 페이지네이션
+    Play / Pause 토글 버튼
+
+**2. 서비스 섹션 스크롤 인터랙션**
+    
+    GSAP ScrollTrigger를 활용한 핀 고정(pin) 스크롤 구현
+    스크롤 진행도(progress)에 따라 배경 색상 전환 (active01 ~ active07)
+    서비스 카드 리스트 상향 이동 애니메이션 (PC 전용, 1025px 이상)
+
+**3. 반응형 GNB 네비게이션**
+    
+    PC (1025px 이상) : 마우스 hover 시 드롭다운 서브메뉴 표시
+    태블릿/모바일 (1024px 이하) : 햄버거 버튼 클릭 시 메뉴 오픈, 서브메뉴 슬라이드 토글
+    스크롤 방향 감지 → 아래 스크롤 시 헤더 숨김 / 위 스크롤 시 헤더 표시
+
+**4. FAQ 아코디언**
+    
+    클릭 시 답변 slideDown/slideUp
+    다른 항목 클릭 시 이전 항목 자동으로 닫힘
+
+**5. 부드러운 스크롤**
+    
+    Lenis 라이브러리를 활용한 smooth scroll 적용
+
+    <br>
+
+### 📅 제작 기간
+
+<!-- 예: 2024.12.01 ~ 2024.12.14 (2주) -->
+<br>
+💬 회고
+<!-- 구현하면서 어려웠던 점, 배운 점 등을 자유롭게 작성해 주세요 -->
+
+GSAP ScrollTrigger의 pin 옵션과 scrub 값 조정에서 많은 시간을 투자하였습니다.
+반응형에서 PC용 ScrollTrigger가 모바일에서도 작동하는 문제를 ScrollTrigger.matchMedia()로 해결하였습니다.
