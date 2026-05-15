@@ -246,69 +246,51 @@ header .innerHeader .gnb > ul > li .plus-minus-toggle img{position: absolute; to
 .services.active01 .inner .list li:nth-child(1) a .innerBox h3{color: #202225;}
 .services.active01 .inner .list li:nth-child(1) a .innerBox p{color: #6f7277;}
 .services.active01 .inner .list li:nth-child(1) a  .btn{display: block;}
-.services.active01 .background .bg1{background-image: url(../img/bg_main_card.jpg);opacity: 1;}
 
 .services.active02 .inner .list li:nth-child(2) .imgBox img { filter: brightness(1);}
 .services.active02 .inner .list li:nth-child(2){background: #fff;}
 .services.active02 .inner .list li:nth-child(2) a .innerBox h3{color: #202225;}
 .services.active02 .inner .list li:nth-child(2) a .innerBox p{color: #6f7277;}
 .services.active02 .inner .list li:nth-child(2) a  .btn{display: block;}
-.services.active02 .background .bg2{
-    background-image: url(../img/bg_main_virtual.jpg);
-    opacity: 1;
-}
 
 .services.active03 .inner .list li:nth-child(3) .imgBox img {filter: brightness(1);}
 .services.active03 .inner .list li:nth-child(3){background: #fff;}
 .services.active03 .inner .list li:nth-child(3) a .innerBox h3{color: #202225;}
 .services.active03 .inner .list li:nth-child(3) a .innerBox p{color: #6f7277;}
 .services.active03 .inner .list li:nth-child(3) a  .btn{display: block;}
-.services.active03 .background .bg3{
-    background-image: url(../img/bg_main_account.jpg);
-    opacity: 1;
-}
 
 .services.active04 .inner .list li:nth-child(4) .imgBox img {filter: brightness(1);}
 .services.active04 .inner .list li:nth-child(4){background: #fff;}
 .services.active04 .inner .list li:nth-child(4) a .innerBox h3{color: #202225;}
 .services.active04 .inner .list li:nth-child(4) a .innerBox p{color: #6f7277;}
 .services.active04 .inner .list li:nth-child(4) a  .btn{display: block;}
-.services.active04 .background .bg4{
-    background-image: url(../img/bg_main_regular.jpg);
-    opacity: 1;
-}
 
 .services.active05 .inner .list li:nth-child(5) .imgBox img {filter: brightness(1);}
 .services.active05 .inner .list li:nth-child(5){background: #fff;}
 .services.active05 .inner .list li:nth-child(5) a .innerBox h3{color: #202225;}
 .services.active05 .inner .list li:nth-child(5) a .innerBox p{color: #6f7277;}
 .services.active05 .inner .list li:nth-child(5) a  .btn{display: block;}
-.services.active05 .background .bg5{
-    background-image: url(../img/bg_main_brand.jpg);
-    opacity: 1;
-}
 
 .services.active06 .inner .list li:nth-child(6) .imgBox img { filter: brightness(1);}
 .services.active06 .inner .list li:nth-child(6){background: #fff;}
 .services.active06 .inner .list li:nth-child(6) a .innerBox h3{color: #202225;}
 .services.active06 .inner .list li:nth-child(6) a .innerBox p{color: #6f7277;}
 .services.active06 .inner .list li:nth-child(6) a  .btn{display: block;}
-.services.active06 .background .bg6{
-    background-image: url(../img/bg_main_escrow.jpg);
-    opacity: 1;
-}
 
 .services.active07 .inner .list li:nth-child(7) .imgBox img {filter: brightness(1);}
 .services.active07 .inner .list li:nth-child(7){background: #fff;}
 .services.active07 .inner .list li:nth-child(7) a .innerBox h3{color: #202225;}
 .services.active07 .inner .list li:nth-child(7) a .innerBox p{color: #6f7277;}
 .services.active07 .inner .list li:nth-child(7) a .btn{display: block;}
-.services.active07 .background .bg7{
-    background-image: url(../img/bg_main_agency.jpg);
-    opacity: 1;
-}
 
 
+.services .background .bg1 { background-image: url(../img/bg_main_card.jpg); opacity: 1; }
+.services .background .bg2 { background-image: url(../img/bg_main_virtual.jpg); opacity: 0; }
+.services .background .bg3 { background-image: url(../img/bg_main_account.jpg); opacity: 0; }
+.services .background .bg4 { background-image: url(../img/bg_main_regular.jpg); opacity: 0; }
+.services .background .bg5 { background-image: url(../img/bg_main_brand.jpg); opacity: 0; }
+.services .background .bg6 { background-image: url(../img/bg_main_escrow.jpg); opacity: 0; }
+.services .background .bg7 { background-image: url(../img/bg_main_agency.jpg); opacity: 0; }
 
 .why { position: relative; width: 100vw;   min-height: 105vh;  overflow: hidden;  background: url(../img/bg_service_pc.png) no-repeat center 0% / cover;}
 .why:after{content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;}

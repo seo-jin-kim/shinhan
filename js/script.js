@@ -226,75 +226,86 @@ ScrollTrigger.matchMedia({
   "(min-width: 1025px)": function () {
 
     let currentActive = null;
-
-    gsap.set(".services .background .bg1", { opacity: 1, zIndex: 1 });
+    gsap.set(".services .background .bg1", { opacity: 1 });
     $(".services").addClass("active01");
     currentActive = "active01";
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services",
-        start: "top top",
-        end: "+=2700",
-        endTrigger: ".list",
-        pin: true,
-        pinSpacing: true,
-        scrub: 4,
-        // markers: true,
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".services",
+            start: "top top",
+            end: "+=2700",
+            endTrigger: ".list",
+            pin: true,
+            pinSpacing: true,
+            scrub: 4,
+            // markers: true,
 
         onUpdate: (self) => {
-          gsap.to(".services .inner .list", {
-            y: -1800 * self.progress,
-            duration: 0.8,
-            ease: "power2.out",
+        gsap.to(".services .inner .list", {
+          y: -1800 * self.progress,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+
+        let newActive;
+        if (self.progress < 0.091)       newActive = "active01";
+        else if (self.progress < 0.276)  newActive = "active02";
+        else if (self.progress < 0.387)  newActive = "active03";
+        else if (self.progress < 0.602)  newActive = "active04";
+        else if (self.progress < 0.758)  newActive = "active05";
+        else if (self.progress < 0.9)    newActive = "active06";
+        else                             newActive = "active07";
+
+        if (newActive !== currentActive) {
+        const oldNum = currentActive ? parseInt(currentActive.slice(-2)) : null;
+        const newNum = parseInt(newActive.slice(-2));
+
+
+        gsap.to(`.services .background .bg${newNum}`, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power1.inOut",
+            onComplete: () => {
+              if (oldNum) gsap.set(`.services .background .bg${oldNum}`, { opacity: 0 });
+            }
           });
 
-          let newActive;
-          if (self.progress < 0.091)       newActive = "active01";
-          else if (self.progress < 0.276)  newActive = "active02";
-          else if (self.progress < 0.387)  newActive = "active03";
-          else if (self.progress < 0.602)  newActive = "active04";
-          else if (self.progress < 0.758)  newActive = "active05";
-          else if (self.progress < 0.9)    newActive = "active06";
-          else                             newActive = "active07";
-
-          if (newActive !== currentActive) {
-            $(".services").removeClass(
-              "active01 active02 active03 active04 active05 active06 active07"
-            ).addClass(newActive);
-            currentActive = newActive;
-          }
-        },
-
-        onLeave: () => {
-          currentActive = "active07";
           $(".services")
-            .removeClass("active01 active02 active03 active04 active05 active06")
-            .addClass("active07");
-        },
+            .removeClass("active01 active02 active03 active04 active05 active06 active07")
+            .addClass(newActive);
+          currentActive = newActive;
+        }
+            },
 
-        onEnterBack: () => {
-          currentActive = null;
-        },
+            onLeave: () => {
+              const oldNum = currentActive ? parseInt(currentActive.slice(-2)) : null;
+              gsap.to(".services .background .bg7", { opacity: 1, duration: 0.3 });
+              if (oldNum && oldNum !== 7) gsap.set(`.services .background .bg${oldNum}`, { opacity: 0 });
+              $(".services").removeClass("active01 active02 active03 active04 active05 active06").addClass("active07");
+              currentActive = "active07";
+            },
+
+            onEnterBack: () => {
+              currentActive = null;
+            },
+            },
+          });
+
+        return () => {
+          tl.scrollTrigger && tl.scrollTrigger.kill();
+          tl.kill();
+          $(".services").removeClass(
+            "active01 active02 active03 active04 active05 active06 active07"
+          );
+          gsap.set(".services .inner .list", { clearProps: "transform" });
+        };
       },
+
+      "(max-width: 1024px)": function () {
+    },
+
     });
-
-    // matchMedia가 해제될 때 자동 cleanup 되도록 반환
-    return () => {
-      tl.scrollTrigger && tl.scrollTrigger.kill();
-      tl.kill();
-      $(".services").removeClass(
-        "active01 active02 active03 active04 active05 active06 active07"
-      );
-      gsap.set(".services .inner .list", { clearProps: "transform" });
-    };
-  },
-
-  "(max-width: 1024px)": function () {
-},
-
-});
-});
+    });
 
 
 
