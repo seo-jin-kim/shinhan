@@ -225,6 +225,12 @@ ScrollTrigger.matchMedia({
   // PC (1025px 이상에서만 ScrollTrigger 생성)
   "(min-width: 1025px)": function () {
 
+    let currentActive = null;
+
+    gsap.set(".services .background .bg1", { opacity: 1, zIndex: 1 });
+    $(".services").addClass("active01");
+    currentActive = "active01";
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".services",
@@ -243,32 +249,32 @@ ScrollTrigger.matchMedia({
             ease: "power2.out",
           });
 
-          let main_service = $(".services");
-          main_service.removeClass(
-            "active01 active02 active03 active04 active05 active06 active07"
-          );
+          let newActive;
+          if (self.progress < 0.091)       newActive = "active01";
+          else if (self.progress < 0.276)  newActive = "active02";
+          else if (self.progress < 0.387)  newActive = "active03";
+          else if (self.progress < 0.602)  newActive = "active04";
+          else if (self.progress < 0.758)  newActive = "active05";
+          else if (self.progress < 0.9)    newActive = "active06";
+          else                             newActive = "active07";
 
-          if (self.progress >= 0.005 && self.progress < 0.091) {
-            main_service.addClass("active01");
-          } else if (self.progress >= 0.091 && self.progress < 0.276) {
-            main_service.addClass("active02");
-          } else if (self.progress >= 0.276 && self.progress < 0.387) {
-            main_service.addClass("active03");
-          } else if (self.progress >= 0.387 && self.progress < 0.602) {
-            main_service.addClass("active04");
-          } else if (self.progress >= 0.602 && self.progress < 0.758) {
-            main_service.addClass("active05");
-          } else if (self.progress >= 0.758 && self.progress < 0.9) {
-            main_service.addClass("active06");
-          } else if (self.progress >= 0.9) {
-            main_service.addClass("active07");
+          if (newActive !== currentActive) {
+            $(".services").removeClass(
+              "active01 active02 active03 active04 active05 active06 active07"
+            ).addClass(newActive);
+            currentActive = newActive;
           }
         },
 
         onLeave: () => {
-          $(".services").removeClass(
-            "active01 active02 active03 active04 active05 active06"
-          );
+          currentActive = "active07";
+          $(".services")
+            .removeClass("active01 active02 active03 active04 active05 active06")
+            .addClass("active07");
+        },
+
+        onEnterBack: () => {
+          currentActive = null;
         },
       },
     });

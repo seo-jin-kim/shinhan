@@ -210,8 +210,6 @@ header .innerHeader .gnb > ul > li .plus-minus-toggle img{position: absolute; to
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    transition:  0.5s ease;
-    z-index: 1;
 }
 .services .inner{max-width: 1610px; margin: 0 auto; padding-top: 300px; display: flex; justify-content: space-between; height: 100%; }
 .sticky-wrap{height: 30%; position: sticky; top: 34.5%; left: 12%;}
