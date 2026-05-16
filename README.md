@@ -9,7 +9,6 @@
 ### 📌 프로젝트 소개
 신한은행 PG 서비스 공식 홈페이지를 참고하여 HTML/CSS/JS 퍼블리싱 역량 향상을 목적으로 제작하였습니다.
 
-https://seo-jin-kim.github.io/shinhan/
 <br>
 
 ### ⚙️ 사용 기술
@@ -24,7 +23,7 @@ https://seo-jin-kim.github.io/shinhan/
 | 아이콘 | Font Awesome |
 
 **🌐 Live Demo
-https://dearie-app-v3.vercel.app/**
+https://seo-jin-kim.github.io/shinhan/
 
 <br>
 
